@@ -5,14 +5,13 @@ on:
       - main
       - dev
 jobs:
-  env:
-    MONGODB_USERNAME: veleski1kristijan
-    MONGODB_PASSWORD: jFTGtljq1B9M76AB
-    MONGODB_DB_NAME: name
-    MONDODB_CLUSTER_ADDRESS: cluster0.0ydjj.mongodb.net
-    PORT: 8080
-
   test:
+    env:
+      MONGODB_USERNAME: veleski1kristijan
+      MONGODB_PASSWORD: jFTGtljq1B9M76AB
+      MONGODB_DB_NAME: name
+      MONDODB_CLUSTER_ADDRESS: cluster0.0ydjj.mongodb.net
+      PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -30,11 +29,12 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "..."
+        run: |
+          echo "MONGODBNAME : $MONGODB_DB_NAME"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |
-          echo "..."
+          echo "MONGODBNAME : $MONGODB_DB_NAME"
