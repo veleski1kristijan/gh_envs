@@ -10,7 +10,7 @@ jobs:
       MONGODB_USERNAME: veleski1kristijan
       MONGODB_PASSWORD: yHWKgsur2iw6gvZV
       MONGODB_DB_NAME: name
-      MONDODB_CLUSTER_ADDRESS: cluster0.0ydjj.mongodb.net
+      MONGODB_CLUSTER_ADDRESS: cluster0.0ydjj.mongodb.net
       PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
